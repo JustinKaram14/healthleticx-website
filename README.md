@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# healthleticx Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Statische Website (HTML, CSS, JavaScript) ohne Build-Schritt und ohne externe Ladequellen. Gehostet über GitHub Pages.
 
-Currently, two official plugins are available:
+Live: https://justinkaram14.github.io/healthleticx-website/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Aufbau
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+index.html                 Startseite
+kontakt/  impressum/  datenschutz/  danke/     Unterseiten (je eine index.html)
+assets/css/style.css       Design
+assets/js/main.js          Hero, 3D-Hantel, Karte, Zurück-Buttons, Danke-Name
+assets/js/form.js          Kontaktformular (Versand über Web3Forms)
+assets/fonts/              Archivo (variable Schrift, lokal, Lizenz OFL)
+assets/vendor/             GSAP 3.12.5, ScrollTrigger, Three.js r128 (lokal)
+assets/media/              Videos und Fotos (siehe unten)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Alle Pfade sind relativ, damit die Seite unter `/healthleticx-website/` und später auf einer eigenen Domain läuft.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Lokal ansehen
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+python3 -m http.server 8000
+```
+
+Dann `http://localhost:8000/` öffnen.
+
+## Platzhalter ersetzen
+
+Jeder Platzhalter im Code ist mit `<!-- PLATZHALTER: … -->` markiert. Suche nach `PLATZHALTER`.
+
+| Platzhalter | Datei in `assets/media/` | Format |
+|---|---|---|
+| Hero-Video quer | `hero-quer.mp4` | 16:9, 1920 × 1080, unter 8 MB, ohne Ton |
+| Hero-Video hoch | `hero-hoch.mp4` | 9:16, 1080 × 1920, unter 5 MB, ohne Ton |
+| Standbild Hero | `hero-poster.jpg` | wie Video |
+| Porträt | `portrait.jpg` | 4:5, mind. 1600 × 2000 |
+| App-Screenshots | `app-1.png` bis `app-3.png` | Handy-Screenshots |
+| Vorher/Nachher (optional) | `review-1-vorher.jpg`, `review-1-nachher.jpg` | 3:4, ca. 1200 × 1600 |
+
+Außerdem offen: Reviews (Zitat, Vorname + Initial), Impressum-Daten, Datenschutz-Texte und der **Web3Forms Access Key** (`data-access-key` in `kontakt/index.html`).
+
+## Eigene Domain später
+
+Die Adresse `https://justinkaram14.github.io/healthleticx-website/` steht in `canonical`/`og:url`/`og:image` aller Seiten sowie in `sitemap.xml` und `robots.txt`. Bei einer eigenen Domain dort per Suchen und Ersetzen austauschen. Hinweis: `robots.txt` und `sitemap.xml` werden von Suchmaschinen nur im Hauptverzeichnis einer Domain beachtet, also erst mit eigener Domain voll wirksam.
+
+## Veröffentlichen
+
+Push auf `main` startet `.github/workflows/deploy.yml` und stellt die Dateien (ohne Build) online.
+
+## Datenschutz und Marke
+
+- Kein Tracking, keine Cookies, keine externen Schriften oder Skripte beim Laden.
+- Der Name der Marke wird immer **healthleticx** geschrieben (klein, mit x).
+- Die Reihenfolge der Hantel-Scheiben (Gelb, Grün mit hellem Rand, Hellgrau) ist bewusst so gewählt, damit sie auch bei Farbsehschwäche unterscheidbar bleibt.
