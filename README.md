@@ -31,13 +31,15 @@ Dann `http://localhost:8000/` öffnen.
 
 Jeder Platzhalter im Code ist mit `<!-- PLATZHALTER: … -->` markiert. Suche nach `PLATZHALTER`.
 
+Schon eingebaut: Porträt (`portrait.jpg`/`.webp`) und die fünf App-Screenshots (`app-1` bis `app-5`, PNG + WebP) in `assets/media/`.
+
+Noch offen:
+
 | Platzhalter | Datei in `assets/media/` | Format |
 |---|---|---|
 | Hero-Video quer | `hero-quer.mp4` | 16:9, 1920 × 1080, unter 8 MB, ohne Ton |
 | Hero-Video hoch | `hero-hoch.mp4` | 9:16, 1080 × 1920, unter 5 MB, ohne Ton |
 | Standbild Hero | `hero-poster.jpg` | wie Video |
-| Porträt | `portrait.jpg` | 4:5, mind. 1600 × 2000 |
-| App-Screenshots | `app-1.png` bis `app-3.png` | Handy-Screenshots |
 | Vorher/Nachher (optional) | `review-1-vorher.jpg`, `review-1-nachher.jpg` | 3:4, ca. 1200 × 1600 |
 
 Außerdem offen: Reviews (Zitat, Vorname + Initial), Impressum-Daten, Datenschutz-Texte und der **Web3Forms Access Key** (`data-access-key` in `kontakt/index.html`).
