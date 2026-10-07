@@ -79,8 +79,12 @@
   </div></section>
 
   <section class="story pad" id="warum"><div class="wrap grid">
-    <!-- PLATZHALTER: Porträt. Datei assets/media/portrait.jpg (4:5, mind. 1600x2000). Als picture-Element mit WebP + JPG einbauen, mit width/height, loading="lazy" und sinnvollem Alt-Text. Desktop 4:5, auf dem Handy quadratisch (object-fit: cover, im CSS schon so). -->
-    <div class="photo">Platzhalter: Porträt von dir</div>
+    <div class="photo">
+      <picture>
+        <source srcset="assets/media/portrait.webp" type="image/webp">
+        <img src="assets/media/portrait.jpg" width="1200" height="1500" loading="lazy" decoding="async" alt="Porträt von mir: Ich lache in die Kamera und halte die Sonnenbrille auf meinem Kopf fest">
+      </picture>
+    </div>
     <div>
       <h2>Warum ich das mache</h2>
       <p>Sport ist für mich keine Pflicht, sondern Leidenschaft. Ich hatte selbst mit gesundheitlichen Problemen und diversen Verletzungen zu kämpfen und habe gemerkt: Erst die Kombination aus Bewegung, guter Ernährung und einem Lifestyle, der Spaß macht, hat mein Leben wirklich verändert.</p>
@@ -130,11 +134,12 @@
         <p class="tag">Healthy &amp; Athletic</p>
         <p>Im Coaching hast du deinen Plan, deine Routinen und mich in der App immer dabei.</p>
       </div>
-      <!-- PLATZHALTER: App-Screenshots. Dateien assets/media/app-1.png bis app-3.png (Handy-Screenshots) in die drei .phone-Kästen einsetzen. -->
       <div class="phones" aria-label="Screenshots der App">
-        <div class="phone">Platzhalter: App-Screenshot Trainingsplan</div>
-        <div class="phone">Platzhalter: App-Screenshot Ernährung</div>
-        <div class="phone">Platzhalter: App-Screenshot Routinen</div>
+        <div class="phone"><picture><source srcset="assets/media/app-1.webp" type="image/webp"><img src="assets/media/app-1.png" width="640" height="1332" loading="lazy" decoding="async" alt="HLX Together: Startseite mit Aktivitätsringen für Kalorien, Training und Schlaf sowie der Wochenübersicht"></picture></div>
+        <div class="phone"><picture><source srcset="assets/media/app-2.webp" type="image/webp"><img src="assets/media/app-2.png" width="640" height="1332" loading="lazy" decoding="async" alt="HLX Together: Trainingsübersicht mit Einheiten, Trainingszeit, Herzfrequenz und Diagramm der Trainingsdauer"></picture></div>
+        <div class="phone"><picture><source srcset="assets/media/app-3.webp" type="image/webp"><img src="assets/media/app-3.png" width="640" height="1332" loading="lazy" decoding="async" alt="HLX Together: Ernährungstagebuch mit Kalorien, Protein, Kohlenhydraten und Fett sowie Frühstück und Mittagessen"></picture></div>
+        <div class="phone"><picture><source srcset="assets/media/app-4.webp" type="image/webp"><img src="assets/media/app-4.png" width="640" height="1332" loading="lazy" decoding="async" alt="HLX Together: Rezepte und Meal Prep mit Suche, Meal-Plan-Funktion und Rezeptkarten mit Kalorien und Makros"></picture></div>
+        <div class="phone"><picture><source srcset="assets/media/app-5.webp" type="image/webp"><img src="assets/media/app-5.png" width="640" height="1332" loading="lazy" decoding="async" alt="HLX Together: Menü mit Gewicht, Übungspool, Schlaf, Rezepten, Supplements, Kalender und Einstellungen"></picture></div>
       </div>
     </div>
   </div></section>
